@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <h1><a href="naver.com">배열과 반복문을 이용한 변화</a></h1>
+     <p>더욱 간결하게 var로 치환하기</p>
+
+     <input type="button" value="night" onclick="
+         var target = document.querySelector('body');
+         if(this.value == 'night'){
+             target.style.background = 'black';
+             target.style.color = 'white';
+             this.value = 'day';
+
+             var alist = document.querySelectorAll('a');
+             var i =0;
+             while(i< alist.length){
+                 alist[i].style.color = 'powderblue';
+                 i = i+1;
+             }
+         } else{
+             target.style.backgroundColor='white';
+             target.style.color='black';
+             this.value = 'night';
+
+             var alist = document.querySelectorAll('a');
+             var i =0;
+             while(i< alist.length){
+                 alist[i].style.color = 'blue';
+                 i = i+1;
+            }
+         }
+         ">
+ </body>
+ </html>

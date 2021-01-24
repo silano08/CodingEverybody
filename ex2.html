@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="hi" onclick="alert('잘부탁혀~')">
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('key down!')">
+    <br>
+    <input id="night_day" type="button" value="night" onclick="
+        if(document.querySelector('#night_day').value == 'night'){
+            document.querySelector('body').style.background = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#night_day').value = 'day';
+        } else{
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            document.querySelector('#night_day').value = 'night';
+        }
+        ">
+    <br>
+    <p>줄바꿈줄바꿈줄바꿈줄바굼</p>
+    <input id="night_day2" type="button" value="night" onclick="
+        if(document.querySelector('#night_day2').value == 'night'){
+            document.querySelector('body').style.background = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#night_day2').value = 'day';
+        } else{
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            document.querySelector('#night_day2').value = 'night';
+        }
+        ">
+
+    <br>
+    <p> 위의 코드와 this를 사용했을때의 차이</p>
+    <input type="button" value="night" onclick="
+        if(this.value == 'night'){
+            document.querySelector('body').style.background = 'black';
+            document.querySelector('body').style.color = 'white';
+            this.value = 'day';
+        } else{
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            this.value = 'night';
+        }
+        ">
+
+    <p>더욱 간결하게 var로 치환하기</p>
+
+    <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if(this.value == 'night'){
+            target.style.background = 'black';
+            target.style.color = 'white';
+            this.value = 'day';
+        } else{
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            this.value = 'night';
+        }
+        ">
+</body>
+
+</html>
